@@ -5214,3 +5214,11 @@ body[data-sidebar=dark] .mm-active>a {
     
     top: 30px!important;
 }
+.row-span-2 {
+    grid-row: span 2;
+}
+.custom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
