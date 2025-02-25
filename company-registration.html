@@ -14,7 +14,7 @@
 
     <!-- twitter-bootstrap-wizard css -->
     <link rel="stylesheet" href="assets/libs/twitter-bootstrap-wizard/prettify.css">
-
+    <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
     <!-- Bootstrap Css -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
@@ -362,39 +362,41 @@
                                     <div id="progrss-wizard" class="twitter-bs-wizard">
                                         <ul class="twitter-bs-wizard-nav nav-justified nav nav-pills">
                                             <li class="nav-item">
-                                                <a href="#progress-seller-details" class="nav-link active"
+                                                <a href="#progress-business-details" class="nav-link active"
                                                     data-toggle="tab">
                                                     <span class="step-number">01</span>
                                                     <span class="step-title">Business Type</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#progress-company-document" class="nav-link" data-toggle="tab">
+                                                <a href="#progress-company-details" class="nav-link" data-toggle="tab">
                                                     <span class="step-number">02</span>
                                                     <span class="step-title">Company Details</span>
                                                 </a>
                                             </li>
 
                                             <li class="nav-item">
-                                                <a href="#progress-bank-detail" class="nav-link" data-toggle="tab">
+                                                <a href="#progress-project-details" class="nav-link" data-toggle="tab">
                                                     <span class="step-number">03</span>
                                                     <span class="step-title">Project</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#progress-confirm-detail" class="nav-link" data-toggle="tab">
+                                                <a href="#progress-investment-details" class="nav-link"
+                                                    data-toggle="tab">
                                                     <span class="step-number">04</span>
                                                     <span class="step-title">Investment</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#progress-confirm-detail" class="nav-link" data-toggle="tab">
+                                                <a href="#progress-attachment-details" class="nav-link"
+                                                    data-toggle="tab">
                                                     <span class="step-number">05</span>
                                                     <span class="step-title">Attachment</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#progress-confirm-detail" class="nav-link" data-toggle="tab">
+                                                <a href="#progress-confirm-details" class="nav-link" data-toggle="tab">
                                                     <span class="step-number">06</span>
                                                     <span class="step-title">Payment</span>
                                                 </a>
@@ -407,7 +409,7 @@
                                         </div>
 
                                         <div class="tab-content twitter-bs-wizard-tab-content">
-                                            <div class="tab-pane active" id="progress-seller-details">
+                                            <div class="tab-pane active" id="progress-business-details">
                                                 <form>
                                                     <div class="auth-form-group-custom mb-4">
                                                         <div class="row">
@@ -464,7 +466,7 @@
                                                     </ul>
                                                 </form>
                                             </div>
-                                            <div class="tab-pane" id="progress-company-document">
+                                            <div class="tab-pane" id="progress-company-details">
                                                 <div>
                                                     <form>
                                                         <div class="row">
@@ -735,105 +737,553 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                            <div class="tab-pane" id="progress-bank-detail">
+
+                                            <div class="tab-pane" id="progress-project-details">
                                                 <div>
-                                                    <form>
-                                                        <div class="container mt-5">
-                                                        <div class="row g-3">
-                                                            <div class="col-lg-4">
-                                                                <div class="textdesc">
-                                                                    <div class="mb-3 auth-form-group-custom  mb-4">
+                                                    <div class="container">
+                                                        <form class="form-container">
+                                                            <div class="flex-row">
+                                                                <div class="column">
+                                                                    <div class="mb-3 auth-form-group-custom mb-4">
+                                                                        <i
+                                                                            class="ri-article-line auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Project
+                                                                            Description</label>
+                                                                        <textarea class="form-control custom-textarea"
+                                                                            id="basicpill-address-input"
+                                                                            placeholder="Enter Project Description"></textarea>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="column">
+                                                                    <div class="mb-3 auth-form-group-custom mb-4">
+                                                                        <i
+                                                                            class="ri-settings-2-line auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Select
+                                                                            Sector</label>
+                                                                        <select class="form-select form-control"
+                                                                            id="progress-basicpill-firstname-input">
+                                                                            <option value="AE">Mining</option>
+                                                                            <option value="VI">Agriculture</option>
+
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="mb-3 auth-form-group-custom mb-4">
+                                                                        <i
+                                                                            class="ri-user-2-line auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Foreign
+                                                                            Employment</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="progress-basicpill-firstname-input"
+                                                                            placeholder="Number of Foreign Employment">
+                                                                    </div>
+                                                                    <div class="mb-3 auth-form-group-custom mb-4">
+                                                                        <i
+                                                                            class="ri-user-2-line auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Male</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="progress-basicpill-firstname-input"
+                                                                            placeholder="Number Male">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div class="mb-3 auth-form-group-custom mb-4">
+                                                                        <i
+                                                                            class="ri-settings-2-line auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Select
+                                                                            Subsector</label>
+                                                                        <select class="form-select form-control"
+                                                                            id="progress-basicpill-firstname-input">
+                                                                            <option value="AE">Cobalt</option>
+                                                                            <option value="VI">Plantations</option>
+
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="mb-3 auth-form-group-custom mb-4">
                                                                         <i
                                                                             class=" ri-user-2-line auti-custom-input-icon">
                                                                         </i>
                                                                         <label class="form-label"
-                                                                            for="progress-basicpill-firstname-input">Description</label>
-                                                                        <textarea required=""
-                                                                            class="form-control h-100"
+                                                                            for="progress-basicpill-firstname-input">Local
+                                                                            Employment</label>
+                                                                        <input type="text" class="form-control"
                                                                             id="progress-basicpill-firstname-input"
-                                                                            rows="8"
-                                                                            placeholder="Enter Project Description"></textarea>
+                                                                            placeholder="Number of Local Employment">
+                                                                    </div>
+                                                                    <div class="mb-3 auth-form-group-custom mb-4">
+                                                                        <i
+                                                                            class=" ri-user-2-line auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Female</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="progress-basicpill-firstname-input"
+                                                                            placeholder="Number of Female">
+                                                                    </div>
+                                                                </div>
 
+
+                                                            </div>
+
+                                                            <div class="flex-row">
+                                                                <div class="column">
+                                                                    <div class="mb-3 auth-form-group-custom mb-1">
+                                                                        <i
+                                                                            class="dripicons-battery-full auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Investment
+                                                                            Capacity</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="progress-basicpill-firstname-input"
+                                                                            placeholder="1200 Metric Tons">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="column">
+                                                                    <div class="mb-3 auth-form-group-custom mb-1">
+                                                                        <i class="dripicons-map 
+                                                                    auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Maps
+                                                                            Location</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="progress-basicpill-firstname-input"
+                                                                            placeholder="-6.8002454,39.1246328">
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div class="mb-3 auth-form-group-custom mb-1"">
+                                                                    <i class=" ri-pencil-ruler-2-line
+                                                                        auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Project
+                                                                            Type</label>
+                                                                        <select class="form-select form-control"
+                                                                            id="progress-basicpill-firstname-input">
+                                                                            <option value="AE">Project type 1</option>
+                                                                            <option value="VI">Pro type 2</option>
+
+                                                                        </select>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-row">
+                                                                <div class="column">
+                                                                    <div class="mb-3 auth-form-group-custom mb-4"">
+                                                                    <i class=" ri-map-pin-line auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Project
+                                                                            Region</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="progress-basicpill-firstname-input"
+                                                                            placeholder="Mtwara">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="column">
+                                                                    <div class="mb-3 auth-form-group-custom mb-4"">
+                                                                    <i class=" ri-map-pin-line auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Project
+                                                                            District</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="progress-basicpill-firstname-input"
+                                                                            placeholder="Tandahimba">
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div class="mb-3 auth-form-group-custom mb-4"">
+                                                                    <i class=" ri-map-pin-line auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Plot
+                                                                            / Block Number</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="progress-basicpill-firstname-input"
+                                                                            placeholder="24 B">
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="column">
+                                                                    <div class="mb-3 auth-form-group-custom mb-4"">
+                                                                    <i class=" ri-map-pin-line auti-custom-input-icon">
+                                                                        </i>
+                                                                        <label class="form-label"
+                                                                            for="progress-basicpill-firstname-input">Street
+                                                                        </label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="progress-basicpill-firstname-input"
+                                                                            placeholder="Mwendapole">
+
+
+                                                                        </select>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <ul class="pager wizard twitter-bs-wizard-pager-link mb-2">
+                                                                <li class="previous disabled"><a
+                                                                        href="javascript: void(0);">Previous</a>
+                                                                </li>
+                                                                <li class="next"><a href="javascript: void(0);">Next</a>
+                                                                </li>
+                                                            </ul>
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="tab-pane" id="progress-investment-details">
+                                                <div>
+                                                    <form>
+                                                        <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4">
+                                                                    <i class=" ri-briefcase-line
+                                                                    auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Investment
+                                                                        Foreign Equity</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="progress-basicpill-firstname-input"
+                                                                        placeholder="Dar es Salaam">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4">
+                                                                    <i class=" ri-map-pin-line auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Foreign
+                                                                        Equity Country</label>
+                                                                    <select class="form-select form-control"
+                                                                        id="progress-basicpill-firstname-input">
+                                                                        <option value="United Kingdom">United kingdom
+                                                                        </option>
+                                                                        <option value="Germany">Germany</option>
+
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4">
+                                                                    <i class=" ri-briefcase-line
+                                                                    auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Foreign
+                                                                        Loan Amount</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="progress-basicpill-firstname-input"
+                                                                        placeholder="Wazo Hill">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4">
+                                                                    <i class=" ri-map-pin-line auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Foreign
+                                                                        Loan Country</label>
+                                                                    <select class="form-select form-control"
+                                                                        id="progress-basicpill-firstname-input">
+                                                                        <option value="United Kingdom">United kingdom
+                                                                        </option>
+                                                                        <option value="Germany">Germany</option>
+
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4"">
+                                                                    <i class=" ri-briefcase-line
+                                                                    auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Investment
+                                                                        Local Equity</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="progress-basicpill-firstname-input"
+                                                                        placeholder="Dar es Salaam">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4"">
+                                                                    <i class=" ri-map-pin-line auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Local
+                                                                        Equity Country</label>
+                                                                    <select class="form-select form-control"
+                                                                        id="progress-basicpill-firstname-input">
+                                                                        <option value="United Kingdom">United kingdom
+                                                                        </option>
+                                                                        <option value="Germany">Germany</option>
+
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4">
+                                                                    <i class=" ri-briefcase-line
+                                                                    auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Local
+                                                                        Loan Amount</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="progress-basicpill-firstname-input"
+                                                                        placeholder="Wazo Hill">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4">
+                                                                    <i class=" ri-map-pin-line auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Local
+                                                                        Loan Country</label>
+                                                                    <select class="form-select form-control"
+                                                                        id="progress-basicpill-firstname-input">
+                                                                        <option value="United Kingdom">Tanzania
+                                                                        </option>
+                                                                        <option value="Germany">Uganda</option>
+
+                                                                    </select>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4">
+                                                                    <i class=" ri-briefcase-line
+                                                                    auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Land /
+                                                                        Building</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="progress-basicpill-firstname-input"
+                                                                        placeholder="Enter property value">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4">
+                                                                    <i class=" ri-briefcase-line
+                                                                    auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Plant &
+                                                                        Machinery</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="progress-basicpill-firstname-input"
+                                                                        placeholder="Plant & Machinery value">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4"">
+                                                                    <i class=" ri-briefcase-line
+                                                                    auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Vehicles</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="progress-basicpill-firstname-input"
+                                                                        placeholder="Vehicle values">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-3 auth-form-group-custom mb-4"">
+                                                                    <i class=" ri-briefcase-line
+                                                                    auti-custom-input-icon">
+                                                                    </i>
+                                                                    <label class="form-label"
+                                                                        for="progress-basicpill-firstname-input">Furniture
+                                                                        & Fittings</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="progress-basicpill-firstname-input"
+                                                                        placeholder="Furniture & Fittings value">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <p class="lead">
+                                                                    Investment Breakdown USD $
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <hr>
+                                                            </div>
+
+                                                            <div class="form-container">
+                                                                <div class="flex-row">
+                                                                    <div class="column">
+                                                                        <div class="mb-3 auth-form-group-custom mb-4">
+                                                                            <i
+                                                                                class="ri-briefcase-line auti-custom-input-icon">
+                                                                            </i>
+                                                                            <label class="form-label"
+                                                                                for="progress-basicpill-firstname-input">Others
+                                                                            </label>
+                                                                            <input type="text" class="form-control"
+                                                                                id="progress-basicpill-firstname-input"
+                                                                                placeholder="Other Sources of Income">
+                                                                        </div>
+                                                                        <div class="mb-3 auth-form-group-custom mb-4">
+                                                                            <i
+                                                                                class="ri-briefcase-line auti-custom-input-icon">
+                                                                            </i>
+                                                                            <label class="form-label"
+                                                                                for="progress-basicpill-firstname-input">Total
+                                                                                Investment</label>
+                                                                            <input type="text" class="form-control"
+                                                                                id="progress-basicpill-firstname-input"
+                                                                                placeholder="20M">
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="column">
+                                                                        <div class="mb-3 auth-form-group-custom mb-4">
+                                                                            <i
+                                                                                class="ri-briefcase-line auti-custom-input-icon">
+                                                                            </i>
+                                                                            <label class="form-label"
+                                                                                for="progress-basicpill-firstname-input">Source
+                                                                                Country</label>
+                                                                            <select class="form-select form-control"
+                                                                                id="progress-basicpill-firstname-input">
+                                                                                <option value="United Kingdom">Tanzania
+                                                                                </option>
+                                                                                <option value="Germany">Uganda</option>
+
+                                                                            </select>
+
+                                                                        </div>
+                                                                        <div class="mb-3 auth-form-group-custom mb-4">
+                                                                            <i
+                                                                                class="ri-briefcase-line auti-custom-input-icon">
+                                                                            </i>
+                                                                            <label class="form-label"
+                                                                                for="progress-basicpill-firstname-input">Working
+                                                                                Capital</label>
+                                                                            <input type="text" class="form-control"
+                                                                                id="progress-basicpill-firstname-input"
+                                                                                placeholder="20M">
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="column">
+                                                                        <div class="mb-3 auth-form-group-custom mb-4">
+                                                                            <i
+                                                                                class="ri-article-line auti-custom-input-icon">
+                                                                            </i>
+                                                                            <label class="form-label"
+                                                                                for="progress-basicpill-firstname-input">Others
+                                                                                Description</label>
+                                                                            <textarea
+                                                                                class="form-control custom-textarea-investment"
+                                                                                id="basicpill-address-input"
+                                                                                placeholder="Enter Description"></textarea>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-4">
-                                                                <div class="mb-3 auth-form-group-custom">
-                                                                    <i class=" ri-user-2-line auti-custom-input-icon">
-                                                                    </i>
-                                                                    <label class="form-label"
-                                                                        for="progress-basicpill-firstname-input">Incorporation
-                                                                        Number</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="progress-basicpill-firstname-input"
-                                                                        placeholder="522456450 ">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="mb-3 auth-form-group-custom mb-4"">
-                                                                    <i class=" ri-user-2-line auti-custom-input-icon">
-                                                                    </i>
-                                                                    <label class="form-label"
-                                                                        for="progress-basicpill-firstname-input">Incorporation
-                                                                        Date</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="progress-basicpill-firstname-input"
-                                                                        placeholder="22/01/1990">
-                                                                </div>
 
-                                                            </div>
-                                                            <div class="col-lg-4 offset-lg-4">
-                                                                <div class="mb-3 auth-form-group-custom mb-4">
-                                                                    <i class=" ri-user-2-line auti-custom-input-icon">
-                                                                    </i>
-                                                                    <label class="form-label"
-                                                                        for="progress-basicpill-firstname-input">Incorporation
-                                                                        Number</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="progress-basicpill-firstname-input"
-                                                                        placeholder="522456450 ">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="mb-3 auth-form-group-custom mb-4">
-                                                                    <i class=" ri-user-2-line auti-custom-input-icon">
-                                                                    </i>
-                                                                    <label class="form-label"
-                                                                        for="progress-basicpill-firstname-input">Incorporation
-                                                                        Number</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="progress-basicpill-firstname-input"
-                                                                        placeholder="522456450 ">
-                                                                </div>
-                                                            </div>
+                                                            <ul class="pager wizard twitter-bs-wizard-pager-link mb-2">
+                                                                <li class="previous disabled"><a
+                                                                        href="javascript: void(0);">Previous</a>
+                                                                </li>
+                                                                <li class="next"><a href="javascript: void(0);">Next</a>
+                                                                </li>
+                                                            </ul>
                                                         </div>
-                                                    </div> 
                                                     </form>
                                                 </div>
                                             </div>
-                                            <div class="tab-pane" id="progress-confirm-detail">
-                                                <div class="row justify-content-center">
-                                                    <div class="col-lg-6">
-                                                        <div class="text-center">
-                                                            <div class="mb-4">
-                                                                <i
-                                                                    class="mdi mdi-check-circle-outline text-success display-4"></i>
-                                                            </div>
-                                                            <div>
-                                                                <h5>Confirm Detail</h5>
-                                                                <p class="text-muted">If several languages coalesce, the
-                                                                    grammar of the resulting</p>
+
+                                            <div class="tab-pane" id="progress-attachment-details">
+
+
+                                                <form action="#">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+
+                                                            <div class="mb-3 auth-form-group-custom mb-4">
+                                                                <i class="ri-briefcase-line auti-custom-input-icon">
+                                                                </i>
+                                                                <label class="form-label"
+                                                                    for="progress-basicpill-firstname-input">Select Document Type</label>
+                                                                <select class="form-select form-control"
+                                                                    id="progress-basicpill-firstname-input">
+                                                                    <option value="Certificate of Incorporation">Certificate of
+                                                                        Incorporation
+                                                                    </option>
+                                                                    <option value="Board Resolution">Board Resolution</option>
+                                                                    <option value="MEMART">MEMART</option>
+
+                                                                </select>
+
                                                             </div>
                                                         </div>
+                                                    
+                                                       
+                                                 
+                                                        <div class="col-md-8">
+
+                                                            <div class="  auth-form-group-custom ">
+                                                                <div>
+                                                                    <i
+                                                                        class="ri-upload-cloud-2-line auti-custom-input-icon">
+                                                                    </i>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="file" class="form-control fileupload" />
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                </form>
+
                                             </div>
                                         </div>
-                                        <!-- <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                            <li class="previous disabled"><a href="javascript: void(0);">Previous</a>
-                                            </li>
-                                            <li class="next"><a href="javascript: void(0);">Next</a></li>
-                                        </ul> -->
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -913,6 +1363,7 @@
     <script src="assets/libs/metismenu/metisMenu.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
 
     <!-- twitter-bootstrap-wizard js -->
     <script src="assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
